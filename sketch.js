@@ -63,7 +63,6 @@ class Player {
       if (this.sheild != 1) {
         fill(0);
       } else {
-        fill(0, 255, 255);
       }
       rect(this.x, 5, this.fat_1, this.fat_2);
     }

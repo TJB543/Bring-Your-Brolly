@@ -352,14 +352,14 @@ function draw() {
     graphical.position(width/2+10,height/2+50);
     text('(WIP)',width/2+48,height/2+90);
     textAlign(LEFT);
-    //text("Controls:", 0, height - 160);
-    //text("- Left Arrow / A = Move Left", 0, height - 130);
-    //text("- Right Arrow / D = Move Right", 0, height - 100);
-    //text("- Down Arrow / S = Duck (+Slow Down Time)", 0, height - 70);
-    //text("- Up Arrow / W = Duck (+Slow Down Time)", 0, height - 40);
-    //text("- Shift = Shield (When Ready)", 0, height - 10);
-    //text("Version 1.B5.1",width-150,height-30);
-    //text("Release version 1.0",width-200,height-10);
+    text("Controls:", 0, height - 160);
+    text("- Left Arrow / A = Move Left", 0, height - 130);
+    text("- Right Arrow / D = Move Right", 0, height - 100);
+    text("- Down Arrow / S = Duck (+Slow Down Time)", 0, height - 70);
+    text("- Up Arrow / W = Duck (+Slow Down Time)", 0, height - 40);
+    text("- Shift = Shield (When Ready)", 0, height - 10);
+    text("Version 1.B5.1",width-150,height-30);
+    text("Release version 1.0",width-200,height-10);
     textAlign(CENTER);
     if (key === '6') {
       storeItem("highscore", 0)

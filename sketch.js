@@ -358,7 +358,8 @@ function draw() {
     text("- Down Arrow / S = Duck (+Slow Down Time)", 0, height - 70);
     text("- Up Arrow / W = Duck (+Slow Down Time)", 0, height - 40);
     text("- Shift = Shield (When Ready)", 0, height - 10);
-    text("Version 1.B5.1",width-130,height-10);
+    text("Version 1.B5.1",width-150,height-10);
+    text("Release version 1.0",width-200,height-10);
     textAlign(CENTER);
     if (key === '6') {
       storeItem("highscore", 0)

@@ -324,6 +324,7 @@ function draw() {
     }
     if (player.sheild == 1) {
       if(coat < player.fat_1){
+        fill(0,255,255);
       rect(player.x,player.y,coat,player.fat_2);
       coat++
       }

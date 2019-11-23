@@ -63,6 +63,7 @@ class Player {
       if (this.sheild != 1) {
         fill(0);
       } else {
+        fill(0, 255, 255);
       }
       rect(this.x, 5, this.fat_1, this.fat_2);
     }
@@ -72,7 +73,6 @@ class Player {
       if (this.sheild != 1) {
         fill(0);
       } else {
-        fill(0, 255, 255);
       }
       rect(this.x, this.y, this.fat_1, this.fat_2);
       this.x = this.x + this.xmove;
@@ -139,7 +139,7 @@ function reset() {
   sheildcooldown = 600;
   gamefrozen = 0;
   ten_seconds = 0;
-  coat = 0;
+  coat = -1;
 }
 
 function arrowmovement() {
@@ -321,14 +321,21 @@ function draw() {
     if (sheildcooldown > 0) {
       sheildcooldown -= 1;
     }
+    if (player.dead != 0) {
     if (player.sheild == 1) {
       if(coat < player.fat_1){
-        fill(0,255,255);
-      rect(player.x,player.y,coat,player.fat_2);
       coat++
       }
-    } else {
-      coat = 0;
+      fill(0,255,255);
+      rect(player.x,player.y,coat,player.fat_2);
+    } else if(coat >= 0){
+        coat--
+      console.log(coat);
+        fill(0,255,255);
+        rect(player.x,player.y,coat,player.fat_2);
+      }
+      else{
+      }
     }
     
 
@@ -358,8 +365,7 @@ function draw() {
     text("- Down Arrow / S = Duck (+Slow Down Time)", 0, height - 70);
     text("- Up Arrow / W = Duck (+Slow Down Time)", 0, height - 40);
     text("- Shift = Shield (When Ready)", 0, height - 10);
-    text("Version 1.B5.1",width-150,height-30);
-    text("Release version 1.0",width-200,height-10);
+    text("Release Version 1.0",width-180,height-10);
     textAlign(CENTER);
     if (key === '6') {
       storeItem("highscore", 0)

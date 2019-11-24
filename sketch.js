@@ -413,5 +413,4 @@ function draw() {
     }
       gamestate = 1;
     }
-  }
 }

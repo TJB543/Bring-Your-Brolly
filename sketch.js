@@ -400,11 +400,16 @@ function draw() {
     text("Press q (Or ' ) to return to the game",width/2,height/4);
     text("This feature is currenly being added currently, well done for finding this, while it is in its eater egg form",width/2,height/2)
     if (key === 'q' || key === "'") {
-      gamefrozen = 0;
       for (let i = 0; i < amount; i++) {
-         enemy[i].v = 0;
-         savestate[i].v = 0;
+        if(enemy[i].gra != 0){
+        savestate[i].gra = enemy[i].gra;
+          savestate[i].v = enemy[i].v;
+        }
+        enemy[i].gra = 0;
+        enemy[i].v = 0;
       }
+        t -= 100;
+    }
       gamestate = 1;
     }
   }

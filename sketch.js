@@ -391,5 +391,7 @@ function draw() {
     if (key === '6') {
       storeItem("highscore", 0)
     }
+  } else if (gamestate == 2) {
+    background(0);
   }
 }

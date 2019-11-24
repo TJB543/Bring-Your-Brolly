@@ -232,7 +232,6 @@ function draw() {
   if (gamestate == 1) {
     // The game is being played
     if (key === 'e' || key === '/') {
-      gamefrozen = 1;
       gamestate = 2;
       
       //Transport to the menu/shop screen
@@ -251,17 +250,16 @@ function draw() {
       }
         t -= 100;
       }
-    if(gamefrozen == 0) {
+    if (key === '1') {
+      if(gamefrozen == 0) {
       for (let i = 0; i < amount; i++) {
         if(enemy[i].gra != savestate[i].gra && enemy[i].v != savestate[i].v) {
         enemy[i].gra = savestate[i].gra;
         enemy[i].v = savestate[i].v;
         }
-        gamefrozen = -1;
-    }
-    }
-    if (key === '1') {
       gamefrozen = 0;
+    }
+      }
     }
     stroke(255);
     background(220);
@@ -400,8 +398,7 @@ function draw() {
     background(0);
     text("Press q (Or ' ) to return to the game",width/2,height/4);
     text("This feature is currenly being added currently, well done for finding this, while it is in its eater egg form",width/2,height/2)
-    if (key === 'q' || key === "'") {
-      for (let i = 0; i < amount; i++) {
+    for (let i = 0; i < amount; i++) {
         if(enemy[i].gra != 0){
         savestate[i].gra = enemy[i].gra;
           savestate[i].v = enemy[i].v;
@@ -410,7 +407,15 @@ function draw() {
         enemy[i].v = 0;
       }
         t -= 100;
-    }
+    if (key === 'q' || key === "'") {
+      for (let i = 0; i < amount; i++) {
+        if(enemy[i].gra != savestate[i].gra && enemy[i].v != savestate[i].v) {
+        enemy[i].gra = savestate[i].gra;
+        enemy[i].v = 0;
+        }
+      gamefrozen = 0;
       gamestate = 1;
     }
+}
+  }
 }

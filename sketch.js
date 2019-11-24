@@ -107,6 +107,7 @@ var enemy = [];
 var savestate = [];
 let highscore;
 var gamestate = 0;
+var graphical_version = 0;
 function setup() {
   umbrella = loadImage('umbrella-1.png');
   legacy = createButton('Legacy');
@@ -216,6 +217,16 @@ function legacy_pressed() {
         enemy[i].gra = random(0.5,0.75);
       }
     }
+function graphical_pressed() {
+  graphical.remove();
+  legacy.remove();
+  gamestate = 1;
+  reset();
+  for(let i = 0; i< amount;i++) {
+        enemy[i].gra = random(0.5,0.75);
+      }
+  graphical_version = 1;
+}
 
 function draw() {
   if (gamestate == 1) {
@@ -357,6 +368,7 @@ function draw() {
     legacy.position(width/2-50,height/2+50);
     legacy.mousePressed(legacy_pressed);
     graphical.position(width/2+10,height/2+50);
+    graphical.mousePressed(graphical_pressed);
     text('(WIP)',width/2+48,height/2+90);
     textAlign(LEFT);
     text("Controls:", 0, height - 160);

@@ -269,6 +269,11 @@ function draw() {
     if (key === 'k') {
       player.guide = 1;
     }
+    if(graphical_version == 0) {
+      if(player.sheild == 1) {
+        fill(0,255,255);
+      }
+    }
     player.update();
     fill(0);
     if (player.dead == 1) {
@@ -333,19 +338,18 @@ function draw() {
       sheildcooldown -= 1;
     }
     if (player.dead != 0) {
-    if (player.sheild == 1) {
-      if(coat < player.fat_1){
-      coat++
-      }
-      fill(0,255,255);
-      rect(player.x,player.y,coat,player.fat_2);
-    } else if(coat >= 0){
-        coat--
-      console.log(coat);
-        fill(0,255,255);
-        rect(player.x,player.y,coat,player.fat_2);
-      }
-      else{
+      if(graphical_version == 1) {
+        if (player.sheild == 1) {
+          if(coat < player.fat_1){
+            coat++
+           }
+          fill(0,255,255);
+          rect(player.x,player.y,coat,player.fat_2);
+        } else if(coat >= 0){
+          coat--
+          fill(0,255,255);
+          rect(player.x,player.y,coat,player.fat_2);
+        } else{}
       }
     }
     

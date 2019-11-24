@@ -232,7 +232,9 @@ function draw() {
   if (gamestate == 1) {
     // The game is being played
     if (key === 'e') {
+      gamefrozen = 1;
       gamestate = 2;
+      
       //Transport to the menu/shop screen
     }
     if (key === '`') {
@@ -249,13 +251,15 @@ function draw() {
       }
         t -= 100;
       }
-    if (key === '1') {
+    if(gamefrozen == 0) {
       for (let i = 0; i < amount; i++) {
         if(enemy[i].gra != savestate[i].gra && enemy[i].v != savestate[i].v) {
         enemy[i].gra = savestate[i].gra;
         enemy[i].v = savestate[i].v;
         }
     }
+    }
+    if (key === '1') {
       gamefrozen = 0;
     }
     stroke(255);
@@ -393,5 +397,14 @@ function draw() {
     }
   } else if (gamestate == 2) {
     background(0);
+    text("Press q to return to the game",width/2,height/4);
+    if (key === 'q') {
+      gamefrozen = 0;
+      for (let i = 0; i < amount; i++) {
+         enemy[i].v = 0;
+         savestate[i].v = 0;
+      }
+      gamestate = 1;
+    }
   }
 }

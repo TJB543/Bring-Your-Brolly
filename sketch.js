@@ -231,7 +231,7 @@ function graphical_pressed() {
 function draw() {
   if (gamestate == 1) {
     // The game is being played
-    if (key === 'e') {
+    if (key === 'e' || key === '/') {
       gamefrozen = 1;
       gamestate = 2;
       

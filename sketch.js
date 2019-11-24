@@ -398,6 +398,7 @@ function draw() {
   } else if (gamestate == 2) {
     background(0);
     text("Press q to return to the game",width/2,height/4);
+    text("This feature is currenly being added currently, well done for finding this, while it is in its eater egg form",width/2,height/2)
     if (key === 'q') {
       gamefrozen = 0;
       for (let i = 0; i < amount; i++) {

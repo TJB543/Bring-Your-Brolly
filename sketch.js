@@ -230,6 +230,11 @@ function graphical_pressed() {
 
 function draw() {
   if (gamestate == 1) {
+    // The game is being played
+    if (key === 'e') {
+      gamestate = 2;
+      //Transport to the menu/shop screen
+    }
     if (key === '`') {
       gamefrozen = 1;
       }

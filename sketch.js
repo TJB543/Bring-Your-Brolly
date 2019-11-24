@@ -343,6 +343,7 @@ function draw() {
     background(255);
     stroke(255);
     image(umbrella,width/2-35,height/4,100,100)
+    image(umbrella,width/2,height/4,10,10);
     for (let i = 0; i < amount; i++) {
       if (enemy[i].side < 2) {
         enemy[i].update();

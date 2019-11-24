@@ -257,6 +257,7 @@ function draw() {
         enemy[i].gra = savestate[i].gra;
         enemy[i].v = savestate[i].v;
         }
+        gamefrozen = -1;
     }
     }
     if (key === '1') {

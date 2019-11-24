@@ -340,7 +340,7 @@ function draw() {
     if (player.dead != 0) {
       if(graphical_version == 1) {
         if (player.sheild == 1) {
-          if(coat < player.fat_1){
+          if(coat < player.fat_1+5){
             coat++
            }
           fill(0,255,255);

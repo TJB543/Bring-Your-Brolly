@@ -255,7 +255,11 @@ function draw() {
       for (let i = 0; i < amount; i++) {
         if(enemy[i].gra != savestate[i].gra && enemy[i].v != savestate[i].v) {
         enemy[i].gra = savestate[i].gra;
+          if(savestate[i].v != 0) {
         enemy[i].v = savestate[i].v;
+          }else{
+            enemy[i].v = 0.5;
+          }
         }
       gamefrozen = 0;
     }

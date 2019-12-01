@@ -108,6 +108,7 @@ var savestate = [];
 let highscore;
 var gamestate = 0;
 var graphical_version = 0;
+var seconds_currency;
 function setup() {
   umbrella = loadImage('umbrella-1.png');
   legacy = createButton('Legacy');
@@ -117,6 +118,10 @@ function setup() {
   highscore = getItem('highscore');
   if (highscore === null) {
     highscore = '0';
+  }
+  seconds_currency = getItem('seconds_currency')
+  if (seconds_currency === null) {
+    seconds_currency = '0';
   }
 }
 
@@ -307,11 +312,13 @@ function draw() {
         text(round(sec / 6000, 0) + ' seconds in, you died! Reseting in ' + round((4 - Delay * 60 / 1000), 0), width / 2, height / 2);
         if (round(sec / 6000, 0) > int(highscore)) {
           highscore = round(sec / 6000, 0);
-          storeItem("highscore", highscore)
+          storeItem("highscore", highscore);
         }
         text(highscore + " seconds is the highscore to beat!", width / 2, height / 2 + 60);
       }
       if (Delay > 50) {
+        seconds_currency = int(seconds_currency)+ round(sec / 6000, 0);
+        storeItem("seconds_currency", seconds_currency);
         reset();
       }
     }
@@ -400,8 +407,10 @@ function draw() {
     }
   } else if (gamestate == 2) {
     background(0);
+    textSize(15);
     text("Press q (Or ' ) to return to the game",width/2,height/4);
     text("This feature is currenly being added currently, well done for finding this, while it is in its eater egg form",width/2,height/2)
+    text("Though, once this feature is added, this will be your currency count "+seconds_currency+" secoins",width/2,height/2+50);
     for (let i = 0; i < amount; i++) {
         if(enemy[i].gra != 0){
         savestate[i].gra = enemy[i].gra;

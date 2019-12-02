@@ -266,7 +266,9 @@ function draw() {
         t -= 100;
       }
     if (key === '1') {
-      if(gamefrozen == 0) {
+      gamefrozen = 0;
+    }
+     if(gamefrozen == 0) {
       for (let i = 0; i < amount; i++) {
         if(enemy[i].gra != savestate[i].gra && enemy[i].v != savestate[i].v) {
         enemy[i].gra = savestate[i].gra;
@@ -277,8 +279,6 @@ function draw() {
           }
         }
         }
-      gamefrozen = 0;
-    }
     }
     stroke(255);
     background(220);

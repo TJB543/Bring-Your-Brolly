@@ -251,35 +251,35 @@ function draw() {
       
       //Transport to the menu/shop screen
     }
-    if (key === '`') {
-      gamefrozen = 1;
-      }
-    if(gamefrozen == 1) {
-      for (let i = 0; i < amount; i++) {
-        if(enemy[i].gra != 0){
-        savestate[i].gra = enemy[i].gra;
-          savestate[i].v = enemy[i].v;
-        }
-        enemy[i].gra = 0;
-        enemy[i].v = 0;
-      }
-        t -= 100;
-      }
-    if (key === '1') {
-      gamefrozen = 0;
-    }
-     if(gamefrozen == 0) {
-      for (let i = 0; i < amount; i++) {
-        if(enemy[i].gra != savestate[i].gra && enemy[i].v != savestate[i].v) {
-        enemy[i].gra = savestate[i].gra;
-        if(savestate[i].v != 0) {
-        enemy[i].v = savestate[i].v;
-          }else{
-            enemy[i].v = 0.5;
-          }
-        }
-        }
-    }
+//     if (key === '`') {
+//       gamefrozen = 1;
+//       }
+//     if(gamefrozen == 1) {
+//       for (let i = 0; i < amount; i++) {
+//         if(enemy[i].gra != 0){
+//         savestate[i].gra = enemy[i].gra;
+//           savestate[i].v = enemy[i].v;
+//         }
+//         enemy[i].gra = 0;
+//         enemy[i].v = 0;
+//       }
+//         t -= 100;
+//       }
+//     if (key === '1') {
+//       gamefrozen = 0;
+//     }
+//      if(gamefrozen == 0) {
+//       for (let i = 0; i < amount; i++) {
+//         if(enemy[i].gra != savestate[i].gra && enemy[i].v != savestate[i].v) {
+//         enemy[i].gra = savestate[i].gra;
+//         if(savestate[i].v != 0) {
+//         enemy[i].v = savestate[i].v;
+//           }else{
+//             enemy[i].v = 0.5;
+//           }
+//         }
+//         }
+//     }
     stroke(255);
     background(220);
     if (player.dead == 1) {

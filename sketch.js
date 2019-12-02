@@ -127,7 +127,6 @@ function setup() {
   if (seconds_currency === null) {
     seconds_currency = '0';
   }
-  seconds_currency = 0;
 }
 
 function reset() {
@@ -147,7 +146,7 @@ function reset() {
   sheildtime = 0;
   sheilded = 0;
   player.sheildable = 1;
-  sheildcooldown = 600;
+  sheildcooldown = 600 - int(upgrades_1);
   gamefrozen = 0;
   ten_seconds = 0;
   coat = -1;

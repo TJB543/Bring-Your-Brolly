@@ -200,7 +200,7 @@ function arrowmovement() {
     t = t-50
   } else {
     player.xmove = 0;
-    if (player.fat_2 < 10-upgrades_3) {
+    if (player.fat_2 < 10+upgrades_3) {
       player.fat_2 += 0.5;
     } else {
       player.fat_2 = 10;

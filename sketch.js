@@ -110,10 +110,15 @@ var gamestate = 0;
 var graphical_version = 0;
 var seconds_currency;
 var upgrades_1;
+var upgrades_2;
+var upgrades_3;
 function setup() {
   upgrades_1 = 0;
-  upgrades_1 = 0;
+  upgrades_2 = 0;
+  upgrades_3 = 0;
   upgrade1 = createButton("upgrade sheild warm up")
+  upgrade2 = createButton("upgrade sheild duration")
+  upgrade3 = createButton("upgrade size")
   upgrades = 0;
   umbrella = loadImage('umbrella-1.png');
   legacy = createButton('Legacy');
@@ -147,7 +152,7 @@ function reset() {
   sheildtime = 0;
   sheilded = 0;
   player.sheildable = 1;
-  sheildcooldown = 600 - int(upgrades_1);
+  sheildcooldown = 600 - int(upgrades_2);
   gamefrozen = 0;
   ten_seconds = 0;
   coat = -1;
@@ -195,12 +200,12 @@ function arrowmovement() {
     t = t-50
   } else {
     player.xmove = 0;
-    if (player.fat_2 < 10) {
+    if (player.fat_2 < 10-upgrades_3) {
       player.fat_2 += 0.5;
     } else {
       player.fat_2 = 10;
     }
-    if (player.fat_1 > 10) {
+    if (player.fat_1 > 10-upgrades_3) {
       player.fat_1 -= 0.5;
     } else {
       player.fat_1 = 10;
@@ -211,6 +216,20 @@ function arrowmovement() {
 function upgraded1() {
   seconds_currency -= 10;
   upgrades_1 += 10;
+}
+
+function upgraded2() {
+  seconds_currency -= 10;
+  upgrades_2 += 10;
+}
+
+function upgraded3() {
+  if(upgrades_3 <= 10){
+  seconds_currency -= 10;
+  upgrades_3 += 1
+  player.fat_1 -= 1;
+  player.fat_2 -= 1;
+     }
 }
 
 function distance() {
@@ -246,6 +265,8 @@ function graphical_pressed() {
 function draw() {
   if (gamestate == 1) {
     upgrade1.hide();
+    upgrade2.hide();
+    upgrade3.hide();
     // The game is being played
     if (key === 'e' || key === '/') {
       gamestate = 2;
@@ -336,11 +357,11 @@ function draw() {
 
     if (t > sec && player.dead == 1) {
       sec += 6000;
-      if (sheildtime > 9-(upgrades_1/60)) {
+      if (sheildtime > 9-(upgrades_2/60)) {
         player.sheildable = 1;
         sheildtime = 10;
       } else {
-        sheildtime += 1+ upgrades_1/100;
+        sheildtime += 1+ upgrades_2/100;
       }if (ten_seconds % 10 == 0) {
         for( let i = 0;i < amount ; i++) {
         enemy[i].maxspeed += 1;
@@ -355,9 +376,10 @@ function draw() {
     if (keyCode === SHIFT && player.sheildable == 1 && sheildcooldown <= 0 && keyIsPressed && sheilded <= 0) {
       player.sheildable = 0;
       player.sheild = 1;
-      sheilded = 120+int(upgrades_1);
+      sheilded = 120+int(upgrades_2);
       sheildcooldown = 600 - int(upgrades_1);
       print(upgrades_1)
+      print(upgrades_2)
     }
     if (sheilded > 0) {
       sheilded -= 1;
@@ -388,7 +410,9 @@ function draw() {
     
 
   } else if(gamestate == 0){
-    upgrade1.hide()
+    upgrade1.hide();
+    upgrade2.hide();
+    upgrade3.hide();
     background(255);
     stroke(255);
     image(umbrella,width/2-35,height/4,100,100);
@@ -427,11 +451,23 @@ function draw() {
     text("This feature is currenly being added currently, well done for finding this, while it is in its eater egg form",width/2,height/2)
     text("Though, once this feature is added, this will be your currency count "+seconds_currency+" secoins",width/2,height/2+50);
     if (seconds_currency > 9) {
-      upgrade1.position(width/2-250,height/4*3)
+      upgrade1.position(width/8,height/4*3)
       upgrade1.show();
       upgrade1.mousePressed(upgraded1);
+      upgrade2.position(width/4,height/4*3)
+      upgrade2.show();
+      upgrade2.mousePressed(upgraded2);
+      upgrade3.position(width/2,height/4*3)
+      if(upgrades_3 <= 10){
+      upgrade3.show();
+    }else{
+      upgrade3.hide();
+    }
+      upgrade.mousePressed(upgraded3);
       } else {
         upgrade1.hide()
+        upgrade2.hide()
+        upgrade3.hide()
       }
     for (let i = 0; i < amount; i++) {
         if(enemy[i].gra != 0){

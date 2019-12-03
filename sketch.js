@@ -440,7 +440,6 @@ function draw() {
         enemy[i].gra = 0;
         enemy[i].v = 0;
       }
-        t -= 100;
     if (key === 'q' || key === "'") {
       for (let i = 0; i < amount; i++) {
         if(enemy[i].gra != savestate[i].gra && enemy[i].v != savestate[i].v) {

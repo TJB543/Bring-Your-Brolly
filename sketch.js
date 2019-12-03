@@ -226,7 +226,7 @@ function upgraded2() {
 function upgraded3() {
   if(upgrades_3 <= 10){
   seconds_currency -= 10;
-  upgrades_3 += 1
+  upgrades_3 += 1;
   player.fat_1 -= 1;
   player.fat_2 -= 1;
      }
@@ -463,7 +463,7 @@ function draw() {
     }else{
       upgrade3.hide();
     }
-      upgrade.mousePressed(upgraded3);
+      upgrade3.mousePressed(upgraded3);
       } else {
         upgrade1.hide()
         upgrade2.hide()

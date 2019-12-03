@@ -464,6 +464,7 @@ function draw() {
       upgrade3.hide();
     }
       upgrade3.mousePressed(upgraded3);
+      
       } else {
         upgrade1.hide()
         upgrade2.hide()

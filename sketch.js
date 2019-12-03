@@ -112,6 +112,7 @@ var seconds_currency;
 var upgrades_1;
 function setup() {
   upgrades_1 = 0;
+  upgrades_1 = 0;
   upgrade1 = createButton("upgrade sheild warm up")
   upgrades = 0;
   umbrella = loadImage('umbrella-1.png');

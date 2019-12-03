@@ -127,10 +127,6 @@ function setup() {
   if (seconds_currency === null) {
     seconds_currency = '0';
   }
-  upgrades_1 = getItem('upgrades_1')
-  if (upgrades_1 === null) {
-    upgrades_1 = '0';
-  }
 }
 
 function reset() {
@@ -214,7 +210,6 @@ function arrowmovement() {
 function upgraded1() {
   seconds_currency -= 10;
   upgrades_1 += 10;
-  storeItem("upgrades_1", upgrades_1);
 }
 
 function distance() {

@@ -161,24 +161,24 @@ function reset() {
 function arrowmovement() {
   if (keyCode === LEFT_ARROW && keyIsPressed || key === 'a' && keyIsPressed) {
     player.xmove = -2.5;
-    if (player.fat_2 < 10) {
+    if (player.fat_2 < 10-upgrades_3) {
       player.fat_2 += 0.5;
     } else {
       player.fat_2 = 10;
     }
-    if (player.fat_1 > 10) {
+    if (player.fat_1 > 10-upgrades_3) {
       player.fat_1 -= 0.5;
     } else {
       player.fat_1 = 10;
     }
   } else if (keyCode === RIGHT_ARROW && keyIsPressed || key === 'd' && keyIsPressed) {
     player.xmove = 2.5;
-    if (player.fat_2 < 10) {
+    if (player.fat_2 < 10-upgrades_3) {
       player.fat_2 += 0.5;
     } else {
       player.fat_2 = 10;
     }
-    if (player.fat_1 > 10) {
+    if (player.fat_1 > 10-upgrades_3) {
       player.fat_1 -= 0.5;
     } else {
       player.fat_1 = 10;
@@ -200,7 +200,7 @@ function arrowmovement() {
     t = t-50
   } else {
     player.xmove = 0;
-    if (player.fat_2 < 10+upgrades_3) {
+    if (player.fat_2 < 10-upgrades_3) {
       player.fat_2 += 0.5;
     } else {
       player.fat_2 = 10;

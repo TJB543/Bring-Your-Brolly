@@ -224,7 +224,7 @@ function upgraded2() {
 }
 
 function upgraded3() {
-  if(upgrades_3 <= 2){
+  if(upgrades_3 < 2){
   seconds_currency -= 10;
   upgrades_3 += 1;
   player.fat_1 -= 1;

@@ -164,24 +164,24 @@ function arrowmovement() {
     if (player.fat_2 < 10-upgrades_3) {
       player.fat_2 += 0.5;
     } else {
-      player.fat_2 = 10;
+      player.fat_2 = 10-upgrades_3;
     }
     if (player.fat_1 > 10-upgrades_3) {
       player.fat_1 -= 0.5;
     } else {
-      player.fat_1 = 10;
+      player.fat_1 = 10-upgrades_3;
     }
   } else if (keyCode === RIGHT_ARROW && keyIsPressed || key === 'd' && keyIsPressed) {
     player.xmove = 2.5;
     if (player.fat_2 < 10-upgrades_3) {
       player.fat_2 += 0.5;
     } else {
-      player.fat_2 = 10;
+      player.fat_2 = 10-upgrades_3;
     }
     if (player.fat_1 > 10-upgrades_3) {
       player.fat_1 -= 0.5;
     } else {
-      player.fat_1 = 10;
+      player.fat_1 = 10-upgrades_3;
     }
   } else if (keyCode === DOWN_ARROW && keyIsPressed || keyCode === UP_ARROW && keyIsPressed || key === 'w' && keyIsPressed || key === 's' && keyIsPressed) {
     if (player.fat_2 > 3) {
@@ -203,12 +203,12 @@ function arrowmovement() {
     if (player.fat_2 < 10-upgrades_3) {
       player.fat_2 += 0.5;
     } else {
-      player.fat_2 = 10;
+      player.fat_2 = 10-upgrades_3;
     }
     if (player.fat_1 > 10-upgrades_3) {
       player.fat_1 -= 0.5;
     } else {
-      player.fat_1 = 10;
+      player.fat_1 = 10-upgrades_3;
     }
   }
 }
@@ -224,7 +224,7 @@ function upgraded2() {
 }
 
 function upgraded3() {
-  if(upgrades_3 <= 10){
+  if(upgrades_3 <= 5){
   seconds_currency -= 10;
   upgrades_3 += 1;
   player.fat_1 -= 1;

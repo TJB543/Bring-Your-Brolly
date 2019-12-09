@@ -152,7 +152,7 @@ function reset() {
   sheildtime = 0;
   sheilded = 0;
   player.sheildable = 1;
-  sheildcooldown = 600 - int(upgrades_1);
+  sheildcooldown = 600;
   gamefrozen = 0;
   ten_seconds = 0;
   coat = -1;

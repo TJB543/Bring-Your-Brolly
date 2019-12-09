@@ -116,8 +116,8 @@ function setup() {
   upgrades_1 = 0;
   upgrades_2 = 0;
   upgrades_3 = 0;
-  upgrade1 = createButton("upgrade sheild warm up")
-  upgrade2 = createButton("upgrade sheild duration")
+  upgrade1 = createButton("upgrade sheild duration")
+  upgrade2 = createButton("upgrade sheild warm up")
   upgrade3 = createButton("upgrade size")
   upgrades = 0;
   umbrella = loadImage('umbrella-1.png');
@@ -152,7 +152,7 @@ function reset() {
   sheildtime = 0;
   sheilded = 0;
   player.sheildable = 1;
-  sheildcooldown = 600 - int(upgrades_2);
+  sheildcooldown = 600 - int(upgrades_1);
   gamefrozen = 0;
   ten_seconds = 0;
   coat = -1;

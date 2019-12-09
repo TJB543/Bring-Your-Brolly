@@ -448,7 +448,6 @@ function draw() {
     background(0);
     textSize(15);
     text("Press q (Or ' ) to return to the game",width/2,height/4);
-    text("This feature is currenly being added currently, well done for finding this, while it is in its eater egg form",width/2,height/2)
     text("Though, once this feature is added, this will be your currency count "+seconds_currency+" secoins",width/2,height/2+50);
     if (seconds_currency > 9) {
       upgrade1.position(width/8,height/4*3)
@@ -458,7 +457,7 @@ function draw() {
       upgrade2.show();
       upgrade2.mousePressed(upgraded2);
       upgrade3.position(width/2,height/4*3)
-      if(upgrades_3 <= 10){
+      if(upgrades_3 < 2){
       upgrade3.show();
     }else{
       upgrade3.hide();

@@ -376,8 +376,8 @@ function draw() {
     if (keyCode === SHIFT && player.sheildable == 1 && sheildcooldown <= 0 && keyIsPressed && sheilded <= 0) {
       player.sheildable = 0;
       player.sheild = 1;
-      sheilded = 120+int(upgrades_2);
-      sheildcooldown = 600 - int(upgrades_1);
+      sheilded = 120+int(upgrades_1);
+      sheildcooldown = 600 - int(upgrades_2);
       print(upgrades_1)
       print(upgrades_2)
     }

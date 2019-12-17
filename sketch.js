@@ -36,7 +36,7 @@ class Enemy {
       }
     }
     if (this.destroy != 1) {
-      fill(0, 0, 255);
+      fill(255);
       circle(this.x, this.y, 10);
     }
   }
@@ -303,7 +303,7 @@ function draw() {
 //         }
 //     }
     stroke(255);
-    background(220);
+    background(51);
     if (player.dead == 1) {
       frameRate(60);
       arrowmovement();
@@ -413,7 +413,7 @@ function draw() {
     upgrade1.hide();
     upgrade2.hide();
     upgrade3.hide();
-    background(255);
+    background(51);
     stroke(255);
     image(umbrella,width/2-35,height/4,100,100);
     for (let i = 0; i < amount; i++) {
@@ -445,7 +445,8 @@ function draw() {
       storeItem("highscore", 0)
     }
   } else if (gamestate == 2) {
-    background(0);
+    background(0,0,255);
+    stroke(255,0,0);
     textSize(15);
     text("Press q (Or ' ) to return to the game",width/2,height/4);
     text("Though, once this feature is added, this will be your currency count "+seconds_currency+" secoins",width/2,height/2+50);

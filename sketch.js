@@ -445,7 +445,7 @@ function draw() {
       storeItem("highscore", 0)
     }
   } else if (gamestate == 2) {
-    background(0,0,255);
+    background(0,255,0);
     stroke(255,0,0);
     textSize(15);
     text("Press q (Or ' ) to return to the game",width/2,height/4);

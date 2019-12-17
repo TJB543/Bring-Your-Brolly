@@ -83,9 +83,9 @@ class Player {
         this.v = 0;
         this.y = height - (this.fat_2 / 2);
       }
-//       if (this.x > width - (this.fat_1 / 2)) {
-//         this.x = width - (this.fat_1 / 2)
-//       } else 
+      if (this.x > width - (this.fat_1 / 2)) {
+        this.x = width - (this.fat_1 / 2)
+      } else 
         if (this.x < this.fat_1 / 2) {
         this.x = this.fat_1 / 2
       }

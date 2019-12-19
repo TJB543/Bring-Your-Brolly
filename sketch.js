@@ -305,7 +305,7 @@ function draw() {
 //         }
 //     }
     stroke(255);
-    if(graphical_version = 1) {
+    if(graphical_version == 1) {
       image(background_i,0,0,width,height);
     } else {
       background(51);

@@ -114,9 +114,17 @@ var upgrades_1;
 var upgrades_2;
 var upgrades_3;
 function setup() {
+  snowy = false
+  cheat = "";
   upgrades_1 = 0;
   upgrades_2 = 0;
   upgrades_3 = 0;
+  code = createInput();
+  code.position(0,0);
+  code.hide();
+  commit = createButton("submit");
+  commit.hide();
+  commit.position(150,0)
   home = createButton("home")
   home.position(0,0)
   home.hide();
@@ -275,6 +283,12 @@ function Title() {
   home.hide();
 }
 
+function cheat_commit() {
+    cheat = code.value()
+    console.log(cheat);
+  code.value("");
+}
+
 function draw() {
   if (gamestate == 1) {
     home.show();
@@ -318,9 +332,11 @@ function draw() {
 //         }
 //     }
     stroke(255);
-    if(graphical_version == 1) {
+    if(snowy == true && graphical_version == 1) {
       image(background_i,0,0,width,height);
-    } else {
+    } else if(graphical_version == 1){
+      image(background_i,0,0,width,height);
+    }else{
       background(51);
     }
     if (player.dead == 1) {
@@ -473,6 +489,13 @@ function draw() {
       storeItem("highscore", 0)
     }
   } else if (gamestate == 2) {
+    commit.show()
+    commit.mousePressed(cheat_commit);
+    if(cheat === "let it snow"){
+       snowy = true;
+       }
+    code.show();
+    home.hide();
     background(0,255,0);
     stroke(255,0,0);
     textSize(15);
@@ -512,6 +535,8 @@ function draw() {
         enemy[i].gra = savestate[i].gra;
         enemy[i].v = 0;
         }
+        commit.hide();
+        code.hide();
       gamefrozen = 0;
       gamestate = 1;
     }

@@ -117,7 +117,6 @@ var upgrades_1;
 var upgrades_2;
 var upgrades_3;
 function setup() {
-  fullscreen(true);
   snowy = true
   cheat = "";
   upgrades_1 = 0;
@@ -154,6 +153,7 @@ function setup() {
 }
 
 function reset() {
+  fullscreen(true);
   createCanvas(windowWidth, windowHeight);
   amount = (width + height) / (1049 / 30);
   rectMode(CENTER);
@@ -310,7 +310,6 @@ function draw() {
        }
   }
   if (gamestate == 1) {
-    fullscreen(true);
     home.show();
     home.mousePressed(Title)
     upgrade1.hide();

@@ -117,6 +117,7 @@ var upgrades_1;
 var upgrades_2;
 var upgrades_3;
 function setup() {
+  fullscreen();
   snowy = true
   cheat = "";
   upgrades_1 = 0;

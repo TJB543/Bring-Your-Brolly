@@ -419,7 +419,8 @@ function draw() {
     upgrade1.hide();
     upgrade2.hide();
     upgrade3.hide();
-    image(background_i,0,0,width,height)
+    background(51);
+    //image(background_i,0,0,width,height)
     stroke(255);
     image(umbrella,width/2-35,height/4,100,100);
     for (let i = 0; i < amount; i++) {
@@ -437,7 +438,6 @@ function draw() {
     legacy.mousePressed(legacy_pressed);
     graphical.position(width/2+10,height/2+50);
     graphical.mousePressed(graphical_pressed);
-    text('(WIP)',width/2+48,height/2+90);
     textAlign(LEFT);
     text("Controls:", 0, height - 160);
     text("- Left Arrow / A = Move Left", 0, height - 130);

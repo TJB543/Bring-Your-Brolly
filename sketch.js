@@ -278,6 +278,7 @@ function graphical_pressed() {
         enemy[i].gra = random(0.5,0.75);
       }
   graphical_version = 1;
+  snowy = true;
 }
 
 function Title() {
@@ -294,6 +295,20 @@ function cheat_commit() {
 }
 
 function draw() {
+  if(snowy == false) {
+  for(let i = 1; i < amount ; i++){
+         enemy[i].colour_R = 0;
+         enemy[i].colour_B = 255;
+         enemy[i].colour_G = 0;
+       }
+  }
+  if(snowy == true) {
+  for(let i = 1; i < amount ; i++){
+         enemy[i].colour_R = 255;
+         enemy[i].colour_B = 255;
+         enemy[i].colour_G = 255;
+       }
+  }
   if (gamestate == 1) {
     home.show();
     home.mousePressed(Title)
@@ -497,18 +512,8 @@ function draw() {
     commit.mousePressed(cheat_commit);
     if(cheat === "let it snow"){
        snowy = true;
-       for(let i = 1; i < amount ; i++){
-         enemy[i].colour_R = 255;
-         enemy[i].colour_B = 255;
-         enemy[i].colour_G = 255;
-       }
      } else if (cheat === "let it rain") {
        snowy = false;
-       for(let i = 1; i < amount ; i++){
-         enemy[i].colour_R = 0;
-         enemy[i].colour_B = 255;
-         enemy[i].colour_G = 0;
-       }
      }
     code.show();
     home.hide();

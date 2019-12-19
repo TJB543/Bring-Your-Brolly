@@ -261,7 +261,8 @@ function distance() {
   }
 }
 function legacy_pressed() {
-      legacy.hide();
+  fullscreen(true);    
+  legacy.hide();
       graphical.hide();
       gamestate = 1;
       reset();
@@ -271,6 +272,7 @@ function legacy_pressed() {
   graphical_version = 0;
     }
 function graphical_pressed() {
+  fullscreen(true);
   graphical.hide();
   legacy.hide();
   gamestate = 1;

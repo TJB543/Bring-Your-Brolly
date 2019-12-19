@@ -121,7 +121,7 @@ function setup() {
   upgrade2 = createButton("upgrade sheild warm up")
   upgrade3 = createButton("upgrade size")
   upgrades = 0;
-  umbrella = loadImage('umbrella-1.png');
+  umbrella = loadImage('umbrella(Snowy)-1.png');
   background_i = loadImage('background(Snowy).png');
   legacy = createButton('Legacy');
   graphical = createButton('Graphical')

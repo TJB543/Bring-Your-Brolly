@@ -310,6 +310,7 @@ function draw() {
        }
   }
   if (gamestate == 1) {
+    fullscreen(true);
     home.show();
     home.mousePressed(Title)
     upgrade1.hide();

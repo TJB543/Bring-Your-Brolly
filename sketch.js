@@ -282,6 +282,7 @@ function graphical_pressed() {
 }
 
 function Title() {
+  fullscreen(false);
   gamestate = 0;
   legacy.show();
   graphical.show();
@@ -474,7 +475,6 @@ function draw() {
     
 
   } else if(gamestate == 0){
-    fullscreen(false);
     upgrade1.hide();
     upgrade2.hide();
     upgrade3.hide();

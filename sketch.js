@@ -295,6 +295,7 @@ function cheat_commit() {
 }
 
 function draw() {
+  fullscreen(true);
   if(snowy == false) {
   for(let i = 0; i < amount ; i++){
          enemy[i].colour_R = 0;

@@ -114,7 +114,7 @@ var upgrades_1;
 var upgrades_2;
 var upgrades_3;
 function setup() {
-  snowy = false
+  snowy = true
   cheat = "";
   upgrades_1 = 0;
   upgrades_2 = 0;
@@ -134,6 +134,7 @@ function setup() {
   upgrades = 0;
   umbrella = loadImage('umbrella(Snowy)-1.png');
   background_i = loadImage('background(Snowy).png');
+  background_i_r = loadImage('background(Rainy).png');
   legacy = createButton('Legacy');
   graphical = createButton('Graphical')
   textAlign(CENTER);
@@ -172,7 +173,7 @@ function reset() {
 }
 
 function arrowmovement() {
-  if (keyCode === LEFT_ARROW && keyIsPressed || key === 'a' && keyIsPressed) {
+  if (keyCode === LEFT_ARROW && keyIsPressed || key === 'a' && keyIsPressed || key === 'A' && keyIsPressed) {
     player.xmove = -2.5;
     if (player.fat_2 < 10-upgrades_3) {
       player.fat_2 += 0.5;
@@ -184,7 +185,7 @@ function arrowmovement() {
     } else {
       player.fat_1 = 10-upgrades_3;
     }
-  } else if (keyCode === RIGHT_ARROW && keyIsPressed || key === 'd' && keyIsPressed) {
+  } else if (keyCode === RIGHT_ARROW && keyIsPressed || key === 'd' && keyIsPressed || key === 'D' && keyIsPressed) {
     player.xmove = 2.5;
     if (player.fat_2 < 10-upgrades_3) {
       player.fat_2 += 0.5;
@@ -196,7 +197,7 @@ function arrowmovement() {
     } else {
       player.fat_1 = 10-upgrades_3;
     }
-  } else if (keyCode === DOWN_ARROW && keyIsPressed || keyCode === UP_ARROW && keyIsPressed || key === 'w' && keyIsPressed || key === 's' && keyIsPressed) {
+  } else if (keyCode === DOWN_ARROW && keyIsPressed || keyCode === UP_ARROW && keyIsPressed || key === 'w' && keyIsPressed || key === 's' && keyIsPressed || key === 'W' && keyIsPressed || key === 'S' && keyIsPressed) {
     if (player.fat_2 > 3) {
       player.fat_2 -= 0.5;
     } else {
@@ -335,7 +336,7 @@ function draw() {
     if(snowy == true && graphical_version == 1) {
       image(background_i,0,0,width,height);
     } else if(graphical_version == 1){
-      image(background_i,0,0,width,height);
+      image(background_i_r,0,0,width,height);
     }else{
       background(51);
     }
@@ -493,7 +494,9 @@ function draw() {
     commit.mousePressed(cheat_commit);
     if(cheat === "let it snow"){
        snowy = true;
-       }
+     } else if (cheat === "let it rain") {
+       snowy = false;
+     }
     code.show();
     home.hide();
     background(0,255,0);

@@ -1,7 +1,7 @@
 class Enemy {
   constructor() {
     this.side = random(0, 3, 1);
-    if (this.side < 2) {
+    if (this.side < 2 || graphical_version == 1) {
       this.x = random(0, width);
       this.y = 10;
     } else {
@@ -319,7 +319,13 @@ function draw() {
     player.guideupdate();
     distance();
     for (let i = 0; i < amount; i++) {
-      enemy[i].update();
+      if(graphical_version == 1) {
+      if (enemy[i].side < 2) {
+        enemy[i].update();
+      }
+      }else{
+        enemy[i].update();
+      }
     }
     if (key === 'k') {
       player.guide = 1;

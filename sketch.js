@@ -12,6 +12,9 @@ class Enemy {
     this.v = 0.05;
     this.destroy = 0;
     this.maxspeed = 1;
+    this.colour_B = 255;
+    this.colour_R = 255;
+    this.colour_G = 255;
   }
   update() {
     if (this.side < 2) {
@@ -36,7 +39,7 @@ class Enemy {
       }
     }
     if (this.destroy != 1) {
-      fill(255);
+      fill(this.colour_R,this.colour_G,this.colour_B);
       circle(this.x, this.y, 10);
     }
   }
@@ -494,8 +497,18 @@ function draw() {
     commit.mousePressed(cheat_commit);
     if(cheat === "let it snow"){
        snowy = true;
+       for(let i = 1; i < amount ; i++){
+         enemy[i].colour_R = 255;
+         enemy[i].colour_B = 255;
+         enemy[i].colour_G = 255;
+       }
      } else if (cheat === "let it rain") {
        snowy = false;
+       for(let i = 1; i < amount ; i++){
+         enemy[i].colour_R = 0;
+         enemy[i].colour_B = 255;
+         enemy[i].colour_G = 0;
+       }
      }
     code.show();
     home.hide();

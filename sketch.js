@@ -1,7 +1,7 @@
 class Enemy {
   constructor() {
     this.side = random(0, 3, 1);
-    if (this.side < 2 || graphical_version == 1) {
+    if (this.side < 2) {
       this.x = random(0, width);
       this.y = 10;
     } else {

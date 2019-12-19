@@ -305,7 +305,11 @@ function draw() {
 //         }
 //     }
     stroke(255);
-    image(background_i,0,0,width,height);
+    if(graphical_version = 1) {
+      image(background_i,0,0,width,height);
+    } else {
+      background(51);
+    }
     if (player.dead == 1) {
       frameRate(60);
       arrowmovement();

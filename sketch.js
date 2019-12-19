@@ -322,6 +322,9 @@ function draw() {
       if(graphical_version == 1) {
       if (enemy[i].side < 2) {
         enemy[i].update();
+      } else {
+        enemy[i].side = 1;
+        enemy[i].update();
       }
       }else{
         enemy[i].update();

@@ -295,7 +295,6 @@ function cheat_commit() {
 }
 
 function draw() {
-  fullscreen(true);
   if(snowy == false) {
   for(let i = 0; i < amount ; i++){
          enemy[i].colour_R = 0;
@@ -311,6 +310,7 @@ function draw() {
        }
   }
   if (gamestate == 1) {
+    fullscreen(true);
     home.show();
     home.mousePressed(Title)
     upgrade1.hide();
@@ -474,6 +474,7 @@ function draw() {
     
 
   } else if(gamestate == 0){
+    fullscreen(false);
     upgrade1.hide();
     upgrade2.hide();
     upgrade3.hide();

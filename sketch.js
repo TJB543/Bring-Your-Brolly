@@ -295,14 +295,14 @@ function cheat_commit() {
 
 function draw() {
   if(snowy == false) {
-  for(let i = 1; i <= amount ; i++){
+  for(let i = 0; i < amount ; i++){
          enemy[i].colour_R = 0;
          enemy[i].colour_B = 255;
          enemy[i].colour_G = 0;
        }
   }
   if(snowy == true) {
-  for(let i = 1; i <= amount ; i++){
+  for(let i = 0; i < amount ; i++){
          enemy[i].colour_R = 255;
          enemy[i].colour_B = 255;
          enemy[i].colour_G = 255;

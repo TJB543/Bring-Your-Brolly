@@ -122,6 +122,7 @@ function setup() {
   upgrade3 = createButton("upgrade size")
   upgrades = 0;
   umbrella = loadImage('umbrella-1.png');
+  background_i = loadImage('background(Snowy).png');
   legacy = createButton('Legacy');
   graphical = createButton('Graphical')
   textAlign(CENTER);
@@ -304,7 +305,7 @@ function draw() {
 //         }
 //     }
     stroke(255);
-    background(51);
+    image(background_i,0,0,width,height);
     if (player.dead == 1) {
       frameRate(60);
       arrowmovement();
@@ -414,7 +415,7 @@ function draw() {
     upgrade1.hide();
     upgrade2.hide();
     upgrade3.hide();
-    background(51);
+    image(background_i,0,0,width,height)
     stroke(255);
     image(umbrella,width/2-35,height/4,100,100);
     for (let i = 0; i < amount; i++) {

@@ -278,7 +278,6 @@ function graphical_pressed() {
         enemy[i].gra = random(0.5,0.75);
       }
   graphical_version = 1;
-  snowy = true;
 }
 
 function Title() {

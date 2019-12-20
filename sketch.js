@@ -81,6 +81,7 @@ class Player {
       if(this.skin == 0){
       rect(this.x, this.y, this.fat_1, this.fat_2);
     }else if(this.skin == 1){
+        imageMode(CENTER);
       image(christmas_skin,this.x,this.y,this.fat_1,this.fat_2);
     }
       this.x = this.x + this.xmove;
@@ -164,6 +165,11 @@ function reset() {
   amount = (width + height) / (1049 / 30);
   rectMode(CENTER);
   player = new Player();
+    skin = getItem('skin')
+    if (skin === null) {
+    skin = '0';
+  }
+    player.skin = skin
   for (let i = 0; i < amount; i++) {
     enemy[i] = new Enemy();
     savestate[i] = new Savestate();
@@ -304,6 +310,7 @@ function cheat_commit() {
 }
 
 function draw() {
+    imageMode(CORNER);
   if(snowy == false) {
   for(let i = 0; i < amount ; i++){
          enemy[i].colour_R = 0;
@@ -525,8 +532,14 @@ function draw() {
      } else if (cheat === "let it rain") {
        snowy = false;
      } else if(cheat === "25/12/19"){
-       player.skin = 1;          
-     }
+       player.skin = 1;
+         skin = 1
+         storeItem("skin",skin)
+     } else if(cheat === "regular"){
+        player.skin = 0;
+               snowy = false;
+               storeItem("skin",skin);
+               }
     code.show();
     home.hide();
     background(0,255,0);

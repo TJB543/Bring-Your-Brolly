@@ -60,6 +60,7 @@ class Player {
     this.sheild = 0;
     this.sheildable = 0;
     this.guide = 0;
+    this.skin = 0;
   }
   guideupdate() {
     if (this.guide == 1 && this.dead == 1) {
@@ -77,7 +78,11 @@ class Player {
         fill(0);
       } else {
       }
+      if(this.skin == 0){
       rect(this.x, this.y, this.fat_1, this.fat_2);
+    }else if(this.skin == 1){
+      image(christmas_skin,this.x,this.y,this.fat_1,this.fat_2);
+    }
       this.x = this.x + this.xmove;
       this.y = this.y + this.gra * this.v;
       if (this.y < height - this.fat_2 / 2) {
@@ -138,6 +143,7 @@ function setup() {
   umbrella = loadImage('umbrella(Snowy)-1.png');
   background_i = loadImage('background(Snowy).png');
   background_i_r = loadImage('background(Rainy).png');
+  christmas_skin = loadImage('present charcter.png');
   legacy = createButton('Legacy');
   graphical = createButton('Graphical')
   textAlign(CENTER);
@@ -518,6 +524,8 @@ function draw() {
        snowy = true;
      } else if (cheat === "let it rain") {
        snowy = false;
+     } else if(cheat === "25/12/19"){
+       player.skin = 1;          
      }
     code.show();
     home.hide();

@@ -537,6 +537,7 @@ function draw() {
          storeItem("skin",skin)
      } else if(cheat === "regular"){
         player.skin = 0;
+       skin = 0;
                snowy = false;
                storeItem("skin",skin);
                }

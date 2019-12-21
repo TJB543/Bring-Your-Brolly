@@ -246,6 +246,10 @@ function arrowmovement() {
   }
 }
 
+function hub_url(){
+  window.open("https://tjb543.github.io/hub/")
+}
+
 function upgraded1() {
   seconds_currency -= 10;
   upgrades_1 += 10;
@@ -500,7 +504,7 @@ function draw() {
   } else if(gamestate == 0){
     fullscreen(false);
     hub.show();
-    hub.mousePressed(window.open("https://tjb543.github.io/hub/"));
+    hub.mousePressed(hub_url);
     upgrade1.hide();
     upgrade2.hide();
     upgrade3.hide();

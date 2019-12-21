@@ -273,7 +273,7 @@ function distance() {
   }
 }
 function legacy_pressed() {
-  fullscreen();    
+  fullscreen(true);    
   legacy.hide();
       graphical.hide();
       gamestate = 1;
@@ -285,7 +285,7 @@ function legacy_pressed() {
     setTimeout(reset,200);
     }
 function graphical_pressed() {
-  fullscreen();
+  fullscreen(true);
   graphical.hide();
   legacy.hide();
   gamestate = 1;
@@ -298,8 +298,8 @@ function graphical_pressed() {
 }
 
 function Title() {
-  fullscreen(false);
     reset();
+  fullscreen(false);
   gamestate = 0;
   legacy.show();
   graphical.show();
@@ -494,6 +494,7 @@ function draw() {
     
 
   } else if(gamestate == 0){
+    fullscreen(false);
     upgrade1.hide();
     upgrade2.hide();
     upgrade3.hide();

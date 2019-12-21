@@ -123,6 +123,9 @@ var upgrades_1;
 var upgrades_2;
 var upgrades_3;
 function setup() {
+  hub = createImg("Hub.png");
+  hub.size(50,50)
+  hub.position(10,10)
   snowy = true
   cheat = "";
   upgrades_1 = 0;
@@ -330,6 +333,7 @@ function draw() {
        }
   }
   if (gamestate == 1) {
+    hub.hide()
     fullscreen(true);
     home.show();
     home.mousePressed(Title)
@@ -495,6 +499,8 @@ function draw() {
 
   } else if(gamestate == 0){
     fullscreen(false);
+    hub.show();
+    hub.mousePressed(window.open("https://tjb543.github.io/hub/"));
     upgrade1.hide();
     upgrade2.hide();
     upgrade3.hide();

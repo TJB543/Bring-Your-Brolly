@@ -11,7 +11,7 @@ class Enemy {
     this.gra = random(0.5, 1);
     this.v = 0.05;
     this.destroy = 0;
-    this.maxspeed = 1;
+    this.maxspeed = 0.5;
     this.colour_B = 255;
     this.colour_R = 255;
     this.colour_G = 255;

@@ -247,7 +247,7 @@ function arrowmovement() {
 }
 
 function hub_url(){
-  window.open("https://tjb543.github.io/hub/")
+  window.location.replace("https://tjb543.github.io/hub/")
 }
 
 function upgraded1() {

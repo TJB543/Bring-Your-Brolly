@@ -273,7 +273,7 @@ function distance() {
   }
 }
 function legacy_pressed() {
-  fullscreen(true);    
+  fullscreen();    
   legacy.hide();
       graphical.hide();
       gamestate = 1;
@@ -282,9 +282,10 @@ function legacy_pressed() {
         enemy[i].gra = random(0.5,0.75);
       }
   graphical_version = 0;
+    setTimeout(reset,200);
     }
 function graphical_pressed() {
-  fullscreen(true);
+  fullscreen();
   graphical.hide();
   legacy.hide();
   gamestate = 1;
@@ -293,14 +294,17 @@ function graphical_pressed() {
         enemy[i].gra = random(0.5,0.75);
       }
   graphical_version = 1;
+    setTimeout(reset,200);
 }
 
 function Title() {
   fullscreen(false);
+    reset();
   gamestate = 0;
   legacy.show();
   graphical.show();
   home.hide();
+    setTimeout(reset,200);
 }
 
 function cheat_commit() {
@@ -531,14 +535,12 @@ function draw() {
        snowy = true;
      } else if (cheat === "let it rain") {
        snowy = false;
-     } else if(cheat === "25/12/19"){
+     } else if(cheat === "25/12/19" && graphical_version == 1){
        player.skin = 1;
          skin = 1
          storeItem("skin",skin)
      } else if(cheat === "regular"){
         player.skin = 0;
-       skin = 0;
-               snowy = false;
                storeItem("skin",skin);
                }
     code.show();

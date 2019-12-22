@@ -337,6 +337,9 @@ function draw() {
        }
   }
   if (gamestate == 1) {
+    if(keyCode === ESCAPE){
+      Title();
+    }
     hub.hide()
     fullscreen(true);
     home.show();

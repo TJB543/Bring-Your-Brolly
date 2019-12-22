@@ -502,6 +502,7 @@ function draw() {
     
 
   } else if(gamestate == 0){
+    resizeCanvas(windowWidth,windowHeight);
     fullscreen(false);
     hub.show();
     hub.mousePressed(hub_url);

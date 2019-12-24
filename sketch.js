@@ -337,7 +337,7 @@ function draw() {
        }
   }
   if (gamestate == 1) {
-    if(keyCode === ESCAPE){
+    if(keyCode === ESCAPE && keyIsPressed){
       Title();
     }
     hub.hide()

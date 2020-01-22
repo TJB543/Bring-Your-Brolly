@@ -126,7 +126,7 @@ function setup() {
   hub = createImg("Hub.png");
   hub.size(50,50)
   hub.position(10,10)
-  snowy = true
+  snowy = false;
   cheat = "";
   upgrades_1 = 0;
   upgrades_2 = 0;
@@ -247,7 +247,7 @@ function arrowmovement() {
 }
 
 function hub_url(){
-  window.location.replace("https://tjb543.github.io/hub/")
+  window.location.replace("https://hub-a.glitch.me/")
 }
 
 function upgraded1() {
